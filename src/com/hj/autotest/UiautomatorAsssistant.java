@@ -30,7 +30,7 @@ public class UiautomatorAsssistant extends UiAutomatorTestCase {
 	UiDevice device;
 	
 	/* log 存放地址*/
-	public String logpath = "/sdcard/quanshi/log/performancellog.txt";
+	public String logpath = "/sdcard/log/performancellog.txt";
 	
 	/*定义通过哪种方式获得uiselector的int标识*/
 	final int  CLICK_ID = 10;

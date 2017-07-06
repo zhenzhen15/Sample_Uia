@@ -63,7 +63,7 @@ public class UiAutomatorTool {
         System.out.println("--------创建build.xml 开始---------");
       
        // String path ="D:\\jenny\\persion\\study\\tools\\adt-bundle-windows\\sdk\\tools";
-        execCmd("cmd /c D:\\jenny\\persion\\study\\tools\\adt-bundle-windows\\sdk\\tools\\android create uitest-project -n " + jarName + " -t "
+        execCmd("cmd /c android create uitest-project -n " + jarName + " -t "
                 + androidID + " -p " + "\"" + WORKSPACE_PATH + "\"");
         System.out.println("--------创建build.xml 完成---------");
     }
@@ -168,7 +168,7 @@ public class UiAutomatorTool {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     input, "GBK"));
             String line;
-            File file = new File("D:/log.txt");
+            File file = new File("c:/log.txt");
             FileWriter fw = new FileWriter(file);
             BufferedWriter bfw = new BufferedWriter(fw);
             while ((line = reader.readLine()) != null) {

@@ -26,6 +26,8 @@ public class QuanShi extends UiAutomatorTestCase{
 			Runtime.getRuntime().exec("am start -S com.gnet.onemeeting/com.gnet.onemeeting.LaunchActivity");
 			//com.gnet.onemeeting/.login.LoginActivity
 			sleep(5000);
+			//点击登录
+			uiautomatorAsssistant.ClickByText("登录");
 			//环境设置，点击logo
 			//UiObject logoObject= new UiObject(new UiSelector().resourceId("com.gnet.onemeeting:id/iv_default_logo"));
 			//logoObject.click();
@@ -34,7 +36,7 @@ public class QuanShi extends UiAutomatorTestCase{
 			//选择环境
 //			UiObject selectEnvObject= new UiObject(new UiSelector().className("android.widget.RadioButton").index(5));
 //			selectEnvObject.click();
-			uiautomatorAsssistant.ClickByClassName("android.widget.RadioButton",5);
+			uiautomatorAsssistant.ClickByClassName("android.widget.RadioButton",0);
 			UiObject saveBtnObject=new UiObject(new UiSelector().className("android.widget.Button").text("确定"));
 			saveBtnObject.click();
 			//getUiDevice().sleep();
@@ -43,12 +45,14 @@ public class QuanShi extends UiAutomatorTestCase{
 			
 			if(unameObject.getText()==null){
 			     unameObject.click();
-			     unameObject.setText("tangtestd_js02@quanshi.com");
+			     unameObject.setText("zhenzhen.zong@quanshi.cn");
 			}else{
-			     //unameObject.clearTextField();
+			    // unameObject.clearTextField();
+			
 			      getUiDevice().click(640, 579);
 			     unameObject.click();
-			     unameObject.setText("tangtestd_js02@quanshi.com");
+			 	sleep(500);
+			     unameObject.setText("zhenzhen.zong@quanshi.cn");
 			}
 			
 			//输入密码
@@ -56,12 +60,12 @@ public class QuanShi extends UiAutomatorTestCase{
 			if(pwdObject.getText()==null){
 				pwdObject.click();
 				
-				pwdObject.setText("2018311836");
+				pwdObject.setText("q111111");
 			}else{
 				//pwdObject.clearTextField();
 				 getUiDevice().click(640, 671);
                 pwdObject.click();
-				pwdObject.setText("2018311836");
+				pwdObject.setText("q111111");
 				
 			}
 			
@@ -78,7 +82,7 @@ public class QuanShi extends UiAutomatorTestCase{
 			//输入会议密码
 			UiObject confpwdObject = new UiObject(new UiSelector().className("android.widget.EditText").text("请输入会议密码"));
 			confpwdObject.click();
-			confpwdObject.setText("2018311865");
+			confpwdObject.setText("97772001");
 			
 			
 			//立即入会
