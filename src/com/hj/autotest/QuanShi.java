@@ -2,6 +2,7 @@ package com.hj.autotest;
 import java.io.IOException;
 
 import android.os.RemoteException;
+import android.text.format.Time;
 
 import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObject;
@@ -47,12 +48,13 @@ public class QuanShi extends UiAutomatorTestCase{
 			     unameObject.click();
 			     unameObject.setText("zhenzhen.zong@quanshi.cn");
 			}else{
-			    // unameObject.clearTextField();
-			
-			      getUiDevice().click(640, 579);
-			     unameObject.click();
+			    unameObject.clearTextField();
 			 	sleep(500);
-			     unameObject.setText("zhenzhen.zong@quanshi.cn");
+			 	unameObject.clearTextField();
+			 	sleep(500);
+			 	unameObject.clearTextField();
+			 	sleep(500);
+			    unameObject.setText("zhenzhen.zong@quanshi.cn");
 			}
 			
 			//输入密码
@@ -94,7 +96,8 @@ public class QuanShi extends UiAutomatorTestCase{
 			
 			//选择语音网络
 		    sleep(5000);
-			getUiDevice().click(130,1050);
+			UiObject audio_choose_voip_btn = new UiObject(new UiSelector().resourceId("com.gnet.onemeeting:id/audio_choose_voip_btn"));
+			audio_choose_voip_btn.click();
 			
 					    
 //		    UiObject confvoice = new UiObject(new UiSelector().className("android.widget.ImageView").enabled(true).instance(0));
@@ -102,10 +105,12 @@ public class QuanShi extends UiAutomatorTestCase{
 		    sleep(5000);
 			//滑动面板
 		    
-            UiScrollable scro = new UiScrollable(new UiSelector().scrollable(true));
-            scro.swipeLeft(40);
-            sleep(5000);
-
+//            UiScrollable scro = new UiScrollable(new UiSelector().scrollable(true));
+//            scro.swipeLeft(40);
+//            sleep(5000);
+		   // uiautomatorAsssistant.ClickById("com.gnet.onemeeting:id/fragment_user_list");
+		    UiObject fragment_user_list = new UiObject(new UiSelector().resourceId("com.gnet.onemeeting:id/fragment_user_list"));
+		    fragment_user_list.swipeLeft(40);
             //开启视频
             getUiDevice().click(200,600);
             UiObject openvideo = new UiObject(new UiSelector().className("android.widget.LinearLayout").clickable(true).index(1));
@@ -151,10 +156,12 @@ public class QuanShi extends UiAutomatorTestCase{
 //            backbutton.click();
 //            sleep(3000);
 			//点击聊天进入聊天界面
-            UiObject id_item_user_list_func_tv = new UiObject(new UiSelector().className("android.widget.LinearLayout").clickable(true).instance(1));
-            id_item_user_list_func_tv.click();
-            sleep(5000);
-            
+//            UiObject id_item_user_list_func_tv = new UiObject(new UiSelector().className("android.widget.LinearLayout").clickable(true).instance(1));
+//            id_item_user_list_func_tv.click();
+//            sleep(5000);
+            UiObject  talk = new UiObject(new UiSelector().text("聊天").index(1));
+            talk.click();
+            sleep(2000);
             //开始聊天
             for(int j=1;j<=3;j++){
             UiObject chat_text_tv = new UiObject(new UiSelector().className("android.widget.EditText").resourceId("com.gnet.onemeeting:id/chat_text_tv"));
@@ -174,8 +181,8 @@ public class QuanShi extends UiAutomatorTestCase{
             sleep(5000);
            //滑动面板
 		    
-            UiScrollable scro1 = new UiScrollable(new UiSelector().scrollable(true));
-            scro1.swipeLeft(40);
+           // UiObject fragment_user_list = new UiObject(new UiSelector().resourceId("com.gnet.onemeeting:id/fragment_user_list"));
+		    fragment_user_list.swipeLeft(40);
             sleep(5000);
             //退会
             getUiDevice().click(200,600);

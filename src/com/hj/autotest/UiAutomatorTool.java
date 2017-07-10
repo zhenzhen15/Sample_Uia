@@ -135,7 +135,7 @@ public class UiAutomatorTool {
     public void runTest(String jarName, String testName) {
         System.out.println("--------测试方法 开始---------");
         String runCmd = "adb shell uiautomator runtest ";
-        String testCmd = jarName + ".jar " + "--nohup -c " + testName;
+        String testCmd = jarName + ".jar " + " -c " + testName;
        execCmd(runCmd + testCmd);
         System.out.println("--------测试方法 完成---------");
     }

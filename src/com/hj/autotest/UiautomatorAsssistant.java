@@ -6,9 +6,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
-
-//import android.R.integer;
-
 import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
@@ -78,7 +75,7 @@ public class UiautomatorAsssistant extends UiAutomatorTestCase {
 			
 		}
 		try {
-			UiAutomationLog("click type:"+CLICK+"content:"+str);
+			UiAutomationLog(" click type:"+CLICK+" content:"+str);
 			uiobject.click();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -93,10 +90,17 @@ public class UiautomatorAsssistant extends UiAutomatorTestCase {
 		//获取当前时间
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
-		String dateStr = calendar.get(Calendar.HOUR_OF_DAY)+"-"+calendar.get(calendar.MINUTE)+"-"+calendar.get(calendar.SECOND);
+		String dateStr = calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(calendar.MINUTE)+":"+calendar.get(calendar.SECOND);
 		
 		//保存文件
-		File files = new File("/sdcard/log/"+dateStr+"_"+descrip+".jpg");
+		File screens = new File("/sdcard/screens");
+		if(!screens.exists()&&!screens.isDirectory()){
+			System.out.println("create new folder :/sdcard/screens");
+			screens.mkdir();
+		}else {
+			System.out.println("Already have Folder：/sdcard/screens");
+		}
+		File files = new File("/sdcard/screens/"+dateStr+"_"+descrip+".jpg");
 		UiAutomationLog("TakeScreen:"+dateStr+"_"+descrip+".jpg");
 		device.takeScreenshot(files);
 		
@@ -106,7 +110,7 @@ public class UiautomatorAsssistant extends UiAutomatorTestCase {
 		//获取当前时间
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTimeInMillis(System.currentTimeMillis());
-		String dateStr = calendar.get(Calendar.HOUR_OF_DAY)+"-"+calendar.get(calendar.MINUTE)+"-"+calendar.get(calendar.SECOND);
+		String dateStr = calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(calendar.MINUTE)+":"+calendar.get(calendar.SECOND);
 		FileWriter fwlog = null;
 		
 		try {
