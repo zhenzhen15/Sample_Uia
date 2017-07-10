@@ -13,13 +13,13 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import com.hj.autotest.UiautomatorAsssistant;
 
 
-public class QuanShi1 extends UiAutomatorTestCase{
+public class aa extends UiAutomatorTestCase{
 	String size;
 	long starttime;
 	long endtime;
 	public void testDemo() throws UiObjectNotFoundException, IOException, RemoteException{
-		   sleep(1000);
-	
+
+sleep(1000);
 	}
 	public void sleep(int times){
 		try {

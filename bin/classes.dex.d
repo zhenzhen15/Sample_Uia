@@ -1,4 +1,5 @@
 C:\Users\Administrator\Desktop\Sample_Uia\bin\classes.dex : \
+C:\Users\Administrator\Desktop\Sample_Uia\bin\classes\com\hj\autotest\aa.class \
 C:\Users\Administrator\Desktop\Sample_Uia\bin\classes\com\hj\autotest\AutoTest.class \
 C:\Users\Administrator\Desktop\Sample_Uia\bin\classes\com\hj\autotest\QuanShi.class \
 C:\Users\Administrator\Desktop\Sample_Uia\bin\classes\com\hj\autotest\QuanShi1.class \

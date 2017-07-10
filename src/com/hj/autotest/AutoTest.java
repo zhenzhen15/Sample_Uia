@@ -10,7 +10,7 @@ public class AutoTest extends UiAutomatorTestCase {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-         new UiAutomatorTool("quanshi","com.hj.autotest." ,"testDemo","1");
+         new UiAutomatorTool("quanshi","com.hj.autotest.aa" ,"testDemo","1");
 	}
 
 }
